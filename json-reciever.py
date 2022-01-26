@@ -1,6 +1,12 @@
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+
 import json
 from http.server import BaseHTTPRequestHandler
 from http.server import HTTPServer
+
+import signal
+signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 class LogHandler(BaseHTTPRequestHandler):
     def do_POST(self):
